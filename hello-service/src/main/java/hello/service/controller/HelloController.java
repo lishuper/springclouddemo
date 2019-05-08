@@ -27,18 +27,10 @@ public class HelloController {
     @Value("${spring.application.name}")
     String name;
 
-    @Value("${dbs.env}")
-    String env;
-
     @GetMapping("/hi")
     public String index() {
         logger.info("you are visiting hello service!");
         return "hi " + name + ",i am from port:" + port;
     }
 
-    @GetMapping("/test")
-    public String env(){
-        logger.info("env:{}",env);
-        return "env is "+env;
-    }
 }
